@@ -113,14 +113,14 @@ let eachChange = []
 
 let greatestProfit = 0;
 
-let greatestLoss = [];
+let greatestLoss = 0;
 
 for(let i = 1; i < finances.length; i++) {
     const [dateCurrent, amountCurrent] = finances[i];
     const [datePrevious, amountPrev] = finances[i - 1];
 
-    eachChange.push(amountPrev - amountCurrent)
-     //console.log(eachChange)
+    eachChange.push(amountCurrent - amountPrev)
+    //  console.log(eachChange)
 
 
     for (let j = 1; j < eachChange.length; j++) {
@@ -128,15 +128,24 @@ for(let i = 1; i < finances.length; i++) {
         const valueCurrent = eachChange[j];
         const valueprevious = eachChange[j -1]
 
+        
         if(j === 1) {greatestProfit = valueprevious 
 
         };
 
         if (valueCurrent > greatestProfit) {
             greatestProfit = valueCurrent;
-            // console.log(greatestProfit)
         
     }
+
+    if(j === 1) {greatestLoss = valueprevious 
+
+    };
+
+    if (valueCurrent < greatestLoss) {
+        greatestLoss = valueCurrent;
+    
+}
 }
     
 
@@ -152,5 +161,6 @@ console.log('averageChange: ', Math.round(averageChange *100)/100)
 
 // Greatest increase in profits
 
-console.log("hello", greatestProfit)
+console.log( greatestProfit)
+console.log(greatestLoss)
 ////console.log(eachChange)
