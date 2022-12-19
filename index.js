@@ -107,19 +107,50 @@ console.log('netTotal: ', netTotal)
 
 // Average of changes in profit and loss 
 
-let totalChange = 0
+let totalChange = 0;
+
+let eachChange = []
+
+let greatestProfit = 0;
+
+let greatestLoss = [];
 
 for(let i = 1; i < finances.length; i++) {
     const [dateCurrent, amountCurrent] = finances[i];
     const [datePrevious, amountPrev] = finances[i - 1];
 
+    eachChange.push(amountPrev - amountCurrent)
+     //console.log(eachChange)
+
+
+    for (let j = 1; j < eachChange.length; j++) {
+
+        const valueCurrent = eachChange[j];
+        const valueprevious = eachChange[j -1]
+
+        if(j === 1) {greatestProfit = valueprevious 
+
+        };
+
+        if (valueCurrent > greatestProfit) {
+            greatestProfit = valueCurrent;
+            // console.log(greatestProfit)
+        
+    }
+}
+    
+
+
     totalChange = totalChange + (amountPrev - amountCurrent)
+
 
 }
 
 const averageChange = totalChange / (finances.length - 1)
 
-console.log('averageChange: ', averageChange)
+console.log('averageChange: ', Math.round(averageChange *100)/100)
 
 // Greatest increase in profits
 
+console.log("hello", greatestProfit)
+////console.log(eachChange)
