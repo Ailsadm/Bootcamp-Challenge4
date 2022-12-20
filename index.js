@@ -165,7 +165,7 @@ console.log('Greatest Increase in Profits:', greatestProfit)
 console.log('Greatest Decrease in Profits:', greatestLoss)
 
 // console.log(eachChange.indexOf(1926159));
-console.log('Month of Greatest increase in profit and amount:', finances[24+ 1])
+console.log('Month of Greatest increase in profit:', finances[24+ 1][0])
 
 // console.log(eachChange.indexOf(-2196167));
-console.log('Month of Greatest decrease in profit and amount:', finances[43+ 1])
+console.log('Month of Greatest decrease in profit:', finances[43+ 1][0])
