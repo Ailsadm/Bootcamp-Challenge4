@@ -91,7 +91,7 @@ let finances = [
 
 // total number of months
 let totalMonths = finances.length
-console.log('totalMonths: ', totalMonths)
+console.log('TotalMonths: ', totalMonths)
 
 // net total amount of profit and losses 
 
@@ -103,7 +103,7 @@ for (let i = 0; i < finances.length; i++) {
     netTotal = (netTotal + amount)
 }
 
-console.log('netTotal: ', netTotal)
+console.log('Total: $', netTotal)
 
 // Average of changes in profit and loss 
 
@@ -157,10 +157,15 @@ for(let i = 1; i < finances.length; i++) {
 
 const averageChange = totalChange / (finances.length - 1)
 
-console.log('averageChange: ', Math.round(averageChange *100)/100)
+console.log('Average Change: $', Math.round(averageChange *100)/100)
 
-// Greatest increase in profits
+// Greatest increase/ decrease in profits
 
-console.log( greatestProfit)
-console.log(greatestLoss)
-////console.log(eachChange)
+console.log('Greatest Increase in Profits:', greatestProfit)
+console.log('Greatest Decrease in Profits:', greatestLoss)
+
+// console.log(eachChange.indexOf(1926159));
+console.log('Month of Greatest increase in profit and amount:', finances[24+ 1])
+
+// console.log(eachChange.indexOf(-2196167));
+console.log('Month of Greatest decrease in profit and amount:', finances[43+ 1])
